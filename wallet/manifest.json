@@ -1,0 +1,10 @@
+{
+  "name": "CASH Sovereign Quantum Wallet",
+  "short_name": "CASH",
+  "description": "Sovereign, post-quantum monetary system",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F6EE25",
+  "scope": "./"
+}
