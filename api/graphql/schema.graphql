@@ -1,0 +1,64 @@
+"""CASH Protocol — GraphQL Schema"""
+
+type Query {
+  """System health"""
+  health: Health!
+
+  """Sovereign constants"""
+  sovereign: Sovereign!
+
+  """Get wallet by address"""
+  wallet(address: String!): Wallet
+
+  """Get transaction by ID"""
+  transaction(txid: String!): Transaction
+
+  """Get current exchange rate"""
+  rate(from: String!, to: String!): Rate!
+
+  """Get blockchain stats"""
+  blockchainStats: BlockchainStats!
+}
+
+type Health {
+  status: String!
+  version: String!
+  uptime: Float!
+}
+
+type Sovereign {
+  address: String!
+  signature: String!
+  totalSupply: String!
+  genesisTimestamp: Int!
+}
+
+type Wallet {
+  address: String!
+  balance: Float!
+  transactions: [Transaction!]!
+}
+
+type Transaction {
+  txid: String!
+  from: String!
+  to: String!
+  amount: Float!
+  timestamp: Float!
+  status: String!
+  note: String
+}
+
+type Rate {
+  from: String!
+  to: String!
+  rate: Float!
+  source: String!
+}
+
+type BlockchainStats {
+  chainLength: Int!
+  pendingTransactions: Int!
+  totalSupply: String!
+  sovereignBalance: Float!
+}
